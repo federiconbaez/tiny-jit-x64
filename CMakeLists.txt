@@ -19,3 +19,8 @@ add_executable(tjit-cli tools/tjit.cpp)
 set_target_properties(tjit-cli PROPERTIES OUTPUT_NAME tjit)
 target_link_libraries(tjit-cli PRIVATE tjit)
 
+enable_testing()
+add_executable(test_tjit tests/test_tjit.cpp)
+target_link_libraries(test_tjit PRIVATE tjit)
+target_compile_options(test_tjit PRIVATE -Wall -Wextra -Werror)
+add_test(NAME tjit COMMAND test_tjit)
