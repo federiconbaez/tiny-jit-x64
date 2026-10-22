@@ -24,3 +24,6 @@ add_executable(test_tjit tests/test_tjit.cpp)
 target_link_libraries(test_tjit PRIVATE tjit)
 target_compile_options(test_tjit PRIVATE -Wall -Wextra -Werror)
 add_test(NAME tjit COMMAND test_tjit)
+
+add_executable(bench_tjit bench/bench.cpp)
+target_link_libraries(bench_tjit PRIVATE tjit)
